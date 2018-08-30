@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Work with Map layers</title>
+
+    <!-- Configure dojo for asynchronous module loading -->
+    <script>
+        var dojoConfig = {
+            async: true
+        };
+    </script>
+
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+
+    <script type = "text/javascript"
+            src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+    </script>
+
+    <!-- Reference libraries. The first CSS is a Dojo theme that gives dijits a consistent style. -->
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/dijit/themes/nihilo/nihilo.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.14/esri/css/esri.css">
+    <link rel="stylesheet" href="css/workwithmaplayers.css"/>
+    <link rel="stylesheet" href="http://js.arcgis.com/3.20/esri/css/esri.css">
+    <script src="http://js.arcgis.com/3.14/"></script>
+    <script src="js/map.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</head>
+
+<body >
+
+
+
+<div id="bcMain" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design:'sidebar', liveSplitters:'true'">
+
+    <div id="cpLeading" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:'true', region:'leading'">
+
+        <div id="divLeft"></div>
+        <h1>Legend :</h1>
+        <h3><a href ="../../EditFeatures/index.html">Public Edit</a></h3>
+        <h3><a href ="../../EditFeatures/indexG.html">Gestionnaire Edit</a></h3>
+        <div id="divLegend"></div>
+    </div>
+
+    <div id="cpCenter" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'">
+
+        <div id="feedback">
+
+            <div id="info">
+
+                <div id="print_button"></div>
+
+            </div>
+            </div>
+
+
+
+        <div id="divSearch"></div>
+
+
+        <div style="position:absolute; right:20px; top:10px; z-Index:999;">
+            <div id="titlePane" data-dojo-type="dijit/TitlePane" data-dojo-props="title:'Measurement', closable:false">
+                <div id="measurementDiv"></div>
+                <span style="font-size:smaller;padding:5px 5px;">Press <b>CTRL</b> to enable snapping.</span>
+            </div>
+        </div>
+
+
+        <div style="position:absolute; right:20px; top:10px; z-Index:999;">
+            <div data-dojo-type="dijit/TitlePane"
+                 data-dojo-props="title:'Switch Basemap', closable:false, open:false">
+                <div data-dojo-type="dijit/layout/ContentPane" style="width:380px; height:280px; overflow:auto;">
+                    <div id="basemapGallery"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div data-dojo-type="dijit/layout/TabContainer"  data-dojo-props="splitter:'true', region:'bottom'" tabPosition="bottom" tabStrip="true">
+
+        <div id="bot" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom', splitter:true" title="Bidonvilles" style="height:50%;"  selected="true">
+            <div id="myTableNode"></div>
+        </div>
+
+        <div id="fot" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'bottom', splitter:true"  title="Reclamations"  style="height:50%;">
+            <div id="myTableFode"></div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
